@@ -1,1 +1,10 @@
 language: java
+addons:
+  sonarcloud:
+    organization: "lfx1001-github" # the key of the org you chose at step #3
+    token:
+      secure: e0228b4f9f24438a1bded3378e98208bca878c13 
+script:
+  - ant 
+  - sonar-scanner
+
