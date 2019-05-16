@@ -30,7 +30,7 @@ public class Rental {
 	/**
 	 * @return
 	 */
-	double amountFor() {
+	double getCharge() {
 		float result = 0;
 		switch (getMovie().getPriceCode()) {
 		case Movie.REGULAR:
