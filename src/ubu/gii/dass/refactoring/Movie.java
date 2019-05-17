@@ -40,7 +40,7 @@ public class Movie {
 	 * @param numberOfDays TODO
 	 * @return
 	 */
-	double getCharge(int numberOfDays) {
+	public double getCharge(int numberOfDays) {
 		float result = 0;
 		switch (_priceCode) {
 		case Movie.REGULAR:
@@ -60,7 +60,7 @@ public class Movie {
 		return result;
 	}
 
-	int getFrequentRenterPoints(int numberOfDays) {
+	public int getFrequentRenterPoints(int numberOfDays) {
 		int result = 0;
 		result++;
 		// add bonus for a two day new release rental
