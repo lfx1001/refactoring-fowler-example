@@ -2,7 +2,7 @@ package ubu.gii.dass.refactoring;
 
 public class RegularMovie extends Movie {
 
-	public RegularMovie(String title, int priceCode) {
+	public RegularMovie(String title) {
 		super(title);
 	}
 
