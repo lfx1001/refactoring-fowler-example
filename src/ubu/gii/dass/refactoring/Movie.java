@@ -51,11 +51,6 @@ public class Movie {
 		case Movie.NEW_RELEASE:
 			result += numberOfDays * 3;
 			break;
-		case Movie.CHILDRENS:
-			result += 1.5;
-			if (numberOfDays > 3)
-				result += (numberOfDays - 3) * 1.5;
-			break;
 		}
 		return result;
 	}
