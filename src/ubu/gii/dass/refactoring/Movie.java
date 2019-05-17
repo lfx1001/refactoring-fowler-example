@@ -40,14 +40,8 @@ public class Movie {
 	 * @param numberOfDays TODO
 	 * @return
 	 */
-	public double getCharge(int numberOfDays) {
-		float result = 0;
-		switch (_priceCode) {
-		case Movie.NEW_RELEASE:
-			result += numberOfDays * 3;
-			break;
-		}
-		return result;
+	public  double getCharge(int numberOfDays) {
+		return 0;
 	}
 
 	public int getFrequentRenterPoints(int numberOfDays) {
