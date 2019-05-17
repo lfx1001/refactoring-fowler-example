@@ -43,11 +43,6 @@ public class Movie {
 	public double getCharge(int numberOfDays) {
 		float result = 0;
 		switch (_priceCode) {
-		case Movie.REGULAR:
-			result += 2;
-			if (numberOfDays > 2)
-				result += (numberOfDays - 2) * 1.5;
-			break;
 		case Movie.NEW_RELEASE:
 			result += numberOfDays * 3;
 			break;
