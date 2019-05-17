@@ -37,24 +37,26 @@ public class Movie {
 	}
 
 	/**
-	 * @param rental TODO
+	 * @param numberOfDays TODO
 	 * @return
 	 */
-	double getCharge(Rental rental) {
+	double getCharge(int numberOfDays) {
 		float result = 0;
-		switch (rental.getMovie().getPriceCode()) {
+		int priceCode = _priceCode;
+		int daysRented = numberOfDays;
+		switch (priceCode) {
 		case Movie.REGULAR:
 			result += 2;
-			if (rental.getDaysRented() > 2)
-				result += (rental.getDaysRented() - 2) * 1.5;
+			if (daysRented > 2)
+				result += (daysRented - 2) * 1.5;
 			break;
 		case Movie.NEW_RELEASE:
-			result += rental.getDaysRented() * 3;
+			result += daysRented * 3;
 			break;
 		case Movie.CHILDRENS:
 			result += 1.5;
-			if (rental.getDaysRented() > 3)
-				result += (rental.getDaysRented() - 3) * 1.5;
+			if (daysRented > 3)
+				result += (daysRented - 3) * 1.5;
 			break;
 		}
 		return result;
