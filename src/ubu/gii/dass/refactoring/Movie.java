@@ -42,21 +42,19 @@ public class Movie {
 	 */
 	double getCharge(int numberOfDays) {
 		float result = 0;
-		int priceCode = _priceCode;
-		int daysRented = numberOfDays;
-		switch (priceCode) {
+		switch (_priceCode) {
 		case Movie.REGULAR:
 			result += 2;
-			if (daysRented > 2)
-				result += (daysRented - 2) * 1.5;
+			if (numberOfDays > 2)
+				result += (numberOfDays - 2) * 1.5;
 			break;
 		case Movie.NEW_RELEASE:
-			result += daysRented * 3;
+			result += numberOfDays * 3;
 			break;
 		case Movie.CHILDRENS:
 			result += 1.5;
-			if (daysRented > 3)
-				result += (daysRented - 3) * 1.5;
+			if (numberOfDays > 3)
+				result += (numberOfDays - 3) * 1.5;
 			break;
 		}
 		return result;
@@ -66,10 +64,8 @@ public class Movie {
 		int result = 0;
 		result++;
 		// add bonus for a two day new release rental
-		int priceCode = _priceCode;
-		int daysRented = numberOfDays;
-		if ((priceCode == Movie.NEW_RELEASE)
-				&& daysRented > 1)
+		if ((_priceCode == Movie.NEW_RELEASE)
+				&& numberOfDays > 1)
 			result++;
 		return result;
 	}
