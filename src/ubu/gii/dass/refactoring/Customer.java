@@ -31,7 +31,7 @@ public class Customer {
 	};
 
 	public String statement() {
-		TextStatement textStatement = new TextStatement(this);
+		Statement textStatement = new TextStatement(this);
 		String result = textStatement.print();
 		return result;
 	}
