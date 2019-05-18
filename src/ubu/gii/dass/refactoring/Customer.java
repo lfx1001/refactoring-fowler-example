@@ -32,7 +32,7 @@ public class Customer {
 
 	public String statement() {
 		TextStatement textStatement = new TextStatement(this);
-		String result = textStatement.print(this);
+		String result = textStatement.print();
 		return result;
 	}
 
