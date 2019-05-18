@@ -28,7 +28,7 @@ public abstract class Statement {
 	}
 
 
-	public String print() {
+	public final String print() {
 		String result = printHeader();
 		result += printDetail();
 		// add footer lines
