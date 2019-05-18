@@ -2,15 +2,21 @@ package ubu.gii.dass.refactoring;
 
 import java.util.Iterator;
 
-public class Statement {
+public abstract class Statement {
 
 	protected Customer customer;
 
 	public Statement() {
 		super();
 	}
+	
+	public abstract String printFooter();
 
-	public String printDetail() {
+	public abstract String printDetailLine(Rental rental); 
+
+	public abstract String printHeader();
+
+	public final String printDetail() {
 		String result = "";
 		Iterator<Rental> rentals = customer.getRentals().iterator();		
 		while (rentals.hasNext()) {
@@ -21,23 +27,6 @@ public class Statement {
 		return result;
 	}
 
-	public String printFooter() {
-		String result = "Amount owed is " + String.valueOf(customer.getTotalCharge()) + "\n";
-		result += "You earned " + String.valueOf(customer.getTotalFrequentPoints())
-				+ " frequent renter points";
-		return result;
-	}
-
-	public String printDetailLine(Rental rental) {
-		String result = "\t" + rental.getMovie().getTitle() + "\t"
-				+ String.valueOf(rental.getCharge()) + "\n";
-		return result;
-	}
-
-	public String printHeader() {
-		String result = "Rental Record for " + customer.getName() + "\n";
-		return result;
-	}
 
 	public String print() {
 		String result = printHeader();
