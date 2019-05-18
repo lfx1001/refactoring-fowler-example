@@ -38,6 +38,14 @@ public class TextStatement {
 		String result = "Rental Record for " + customer.getName() + "\n";
 		return result;
 	}
+
+	public String print(Customer customer) {
+		String result = printHeader(customer);
+		result += printDetail(customer);
+		// add footer lines
+		result += printFooter(customer);
+		return result;
+	}
 	
 	
 }

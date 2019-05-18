@@ -32,13 +32,10 @@ public class Customer {
 
 	public String statement() {
 		TextStatement textStatement = new TextStatement(this);
-		String result = textStatement.printHeader(this);
-		result += textStatement.printDetail(this);
-		// add footer lines
-		result += textStatement.printFooter(this);
+		String result = textStatement.print(this);
 		return result;
 	}
-	
+
 	public double getTotalCharge() {
 		double result = 0;
 		Iterator<Rental> rentals = _rentals.iterator();
