@@ -31,15 +31,21 @@ public class Customer {
 	};
 
 	public String statement() {
-		Iterator<Rental> rentals = _rentals.iterator();
 		String result = printHeader(this);
+		result += printDetail(this);
+		// add footer lines
+		result += printFooter(this);
+		return result;
+	}
+
+	private String printDetail(Customer customer) {
+		String result = "";
+		Iterator<Rental> rentals = customer._rentals.iterator();		
 		while (rentals.hasNext()) {
 			Rental rental = rentals.next();
 			// show figures for this rental
 			result += printDetailLine(rental);
 		}
-		// add footer lines
-		result += printFooter(this);
 		return result;
 	}
 
