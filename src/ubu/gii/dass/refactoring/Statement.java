@@ -5,10 +5,6 @@ import java.util.Iterator;
 public abstract class Statement {
 
 	protected Customer customer;
-
-	public Statement() {
-		super();
-	}
 	
 	public abstract String printFooter();
 

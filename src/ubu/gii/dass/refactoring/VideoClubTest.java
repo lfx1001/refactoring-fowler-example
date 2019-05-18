@@ -2,7 +2,6 @@ package ubu.gii.dass.refactoring;
 
 import static org.junit.Assert.*;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -39,9 +38,6 @@ public class VideoClubTest {
 		c1.addRental(r2);
 		c1.addRental(r3);
 	}
-
-	@After
-	public void tearDown() throws Exception {}
 
 	@Test
 	public void testAlquiler() {
