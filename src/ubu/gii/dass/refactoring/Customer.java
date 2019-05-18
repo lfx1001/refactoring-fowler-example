@@ -32,20 +32,32 @@ public class Customer {
 
 	public String statement() {
 		Iterator<Rental> rentals = _rentals.iterator();
-		String result = "Rental Record for " + getName() + "\n";
+		String result = printHeader(this);
 		while (rentals.hasNext()) {
-			double rentalAmount = 0;
 			Rental rental = rentals.next();
-			// determine amounts for each line
-			rentalAmount = rental.getCharge();
 			// show figures for this rental
-			result += "\t" + rental.getMovie().getTitle() + "\t"
-					+ String.valueOf(rentalAmount) + "\n";
+			result += printDetailLine(rental);
 		}
 		// add footer lines
-		result += "Amount owed is " + String.valueOf(getTotalCharge()) + "\n";
-		result += "You earned " + String.valueOf(getTotalFrequentPoints())
+		result += printFooter(this);
+		return result;
+	}
+
+	private String printFooter(Customer customer) {
+		String result = "Amount owed is " + String.valueOf(customer.getTotalCharge()) + "\n";
+		result += "You earned " + String.valueOf(customer.getTotalFrequentPoints())
 				+ " frequent renter points";
+		return result;
+	}
+
+	private String printDetailLine(Rental rental) {
+		String result = "\t" + rental.getMovie().getTitle() + "\t"
+				+ String.valueOf(rental.getCharge()) + "\n";
+		return result;
+	}
+
+	private String printHeader(Customer customer) {
+		String result = "Rental Record for " + customer.getName() + "\n";
 		return result;
 	}
 	
