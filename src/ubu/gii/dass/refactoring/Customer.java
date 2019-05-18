@@ -35,6 +35,12 @@ public class Customer {
 		String result = textStatement.print();
 		return result;
 	}
+	
+	public String statementHtml() {
+		Statement textStatement = new HtmlStatement(this);
+		String result = textStatement.print();
+		return result;
+	}
 
 	public double getTotalCharge() {
 		double result = 0;
@@ -59,4 +65,5 @@ public class Customer {
 	public List<Rental> getRentals(){
 		return _rentals;
 	}
+
 }
